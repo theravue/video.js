@@ -100,7 +100,6 @@ class ModalDialog extends Component {
     }, {
       'aria-describedby': `${this.id()}_description`,
       'aria-hidden': 'true',
-      'aria-label': this.label(),
       'role': 'dialog',
       'aria-live': 'polite'
     });

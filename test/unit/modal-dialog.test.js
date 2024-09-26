@@ -90,7 +90,6 @@ QUnit.test('should create the expected element', function(assert) {
     attrs: {
       'aria-describedby': this.modal.descEl_.id,
       'aria-hidden': 'true',
-      'aria-label': this.modal.label(),
       'role': 'dialog'
     },
     props: {
@@ -482,7 +481,6 @@ QUnit.test('"label" option', function(assert) {
   const modal = new ModalDialog(this.player, {label});
 
   assert.expect(1);
-  assert.strictEqual(modal.el().getAttribute('aria-label'), label, 'uses the label as the aria-label');
   modal.dispose();
 });
 

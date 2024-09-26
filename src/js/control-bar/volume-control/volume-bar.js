@@ -45,10 +45,7 @@ class VolumeBar extends Slider {
   createEl() {
     return super.createEl('div', {
       className: 'vjs-volume-bar vjs-slider-bar'
-    }, {
-      'aria-label': this.localize('Volume Level'),
-      'aria-live': 'polite'
-    });
+    }, {});
   }
 
   /**

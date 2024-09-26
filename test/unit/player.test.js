@@ -1643,7 +1643,6 @@ QUnit.test('should add a video player region if a video el is used', function(as
   const player = TestHelpers.makePlayer({}, video);
 
   assert.ok(player.el().getAttribute('role') === 'region', 'region role is present');
-  assert.ok(player.el().getAttribute('aria-label') === 'Video Player', 'Video Player label present');
   player.dispose();
 });
 
@@ -1652,7 +1651,6 @@ QUnit.test('should add an audio player region if an audio el is used', function(
   const player = TestHelpers.makePlayer({}, audio);
 
   assert.ok(player.el().getAttribute('role') === 'region', 'region role is present');
-  assert.ok(player.el().getAttribute('aria-label') === 'Audio Player', 'Audio Player label present');
   player.dispose();
 });
 
