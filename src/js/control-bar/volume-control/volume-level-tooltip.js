@@ -37,9 +37,7 @@ class VolumeLevelTooltip extends Component {
   createEl() {
     return super.createEl('div', {
       className: 'vjs-volume-tooltip'
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
   }
 
   /**

@@ -125,14 +125,12 @@ class MenuItem extends ClickableComponent {
     if (this.selectable) {
       if (selected) {
         this.addClass('vjs-selected');
-        this.el_.setAttribute('aria-checked', 'true');
         // aria-checked isn't fully supported by browsers/screen readers,
         // so indicate selected state to screen reader in the control text.
         this.controlText(', selected');
         this.isSelected_ = true;
       } else {
         this.removeClass('vjs-selected');
-        this.el_.setAttribute('aria-checked', 'false');
         // Indicate un-selected state to screen reader
         this.controlText('');
         this.isSelected_ = false;

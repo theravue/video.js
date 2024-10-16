@@ -27,8 +27,6 @@ class PlaybackRateMenuButton extends MenuButton {
   constructor(player, options) {
     super(player, options);
 
-    this.menuButton_.el_.setAttribute('aria-describedby', this.labelElId_);
-
     this.updateVisibility();
     this.updateLabel();
 

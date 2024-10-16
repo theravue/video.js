@@ -48,9 +48,7 @@ class Button extends ClickableComponent {
     if (!this.player_.options_.experimentalSvgIcons) {
       el.appendChild(createEl('span', {
         className: 'vjs-icon-placeholder'
-      }, {
-        'aria-hidden': true
-      }));
+      }, {}));
     }
 
     this.createControlTextEl(el);

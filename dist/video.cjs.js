@@ -4025,9 +4025,7 @@ class Component$1 {
     // <span><svg><use>....</use></svg></span>
     const iconContainer = createEl('span', {
       className: 'vjs-icon-placeholder vjs-svg-icon'
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
     const svgEl = document__default["default"].createElementNS(xmlnsURL, 'svg');
     svgEl.setAttributeNS(null, 'viewBox', '0 0 512 512');
     const useEl = document__default["default"].createElementNS(xmlnsURL, 'use');
@@ -6135,9 +6133,7 @@ class ModalDialog extends Component$1 {
       tabIndex: -1
     }, {
       'aria-describedby': `${this.id()}_description`,
-      'aria-hidden': 'true',
-      'role': 'dialog',
-      'aria-live': 'polite'
+      'role': 'dialog'
     });
   }
   dispose() {
@@ -6227,7 +6223,6 @@ class ModalDialog extends Component$1 {
     player.controls(false);
     this.show();
     this.conditionalFocus_();
-    this.el().setAttribute('aria-hidden', 'false');
 
     /**
       * Fired just after a `ModalDialog` is opened.
@@ -6284,7 +6279,6 @@ class ModalDialog extends Component$1 {
       player.controls(true);
     }
     this.hide();
-    this.el().setAttribute('aria-hidden', 'true');
 
     /**
       * Fired just after a `ModalDialog` is closed.
@@ -10798,9 +10792,7 @@ class ClickableComponent extends Component$1 {
     if (!this.player_.options_.experimentalSvgIcons) {
       el.appendChild(createEl('span', {
         className: 'vjs-icon-placeholder'
-      }, {
-        'aria-hidden': true
-      }));
+      }, {}));
     }
     this.createControlTextEl(el);
     return el;
@@ -10823,10 +10815,7 @@ class ClickableComponent extends Component$1 {
   createControlTextEl(el) {
     this.controlTextEl_ = createEl('span', {
       className: 'vjs-control-text'
-    }, {
-      // let the screen reader user know that the text of the element may change
-      'aria-live': 'polite'
-    });
+    }, {});
     if (el) {
       el.appendChild(this.controlTextEl_);
     }
@@ -10878,7 +10867,6 @@ class ClickableComponent extends Component$1 {
     if (!this.enabled_) {
       this.enabled_ = true;
       this.removeClass('vjs-disabled');
-      this.el_.setAttribute('aria-disabled', 'false');
       if (typeof this.tabIndex_ !== 'undefined') {
         this.el_.setAttribute('tabIndex', this.tabIndex_);
       }
@@ -10893,7 +10881,6 @@ class ClickableComponent extends Component$1 {
   disable() {
     this.enabled_ = false;
     this.addClass('vjs-disabled');
-    this.el_.setAttribute('aria-disabled', 'true');
     if (typeof this.tabIndex_ !== 'undefined') {
       this.el_.removeAttribute('tabIndex');
     }
@@ -11681,9 +11668,7 @@ class Button extends ClickableComponent {
     if (!this.player_.options_.experimentalSvgIcons) {
       el.appendChild(createEl('span', {
         className: 'vjs-icon-placeholder'
-      }, {
-        'aria-hidden': true
-      }));
+      }, {}));
     }
     this.createControlTextEl(el);
     return el;
@@ -12402,7 +12387,6 @@ class TimeDivider extends Component$1 {
       // this element and its contents can be hidden from assistive techs since
       // it is made extraneous by the announcement of the control text
       // for the current time and duration displays
-      'aria-hidden': true
     });
     const div = super.createEl('div');
     const span = super.createEl('span', {
@@ -12460,9 +12444,7 @@ class RemainingTimeDisplay extends TimeDisplay {
   createEl() {
     const el = super.createEl();
     if (this.options_.displayNegative !== false) {
-      el.insertBefore(createEl('span', {}, {
-        'aria-hidden': true
-      }, '-'), this.contentEl_);
+      el.insertBefore(createEl('span', {}, {}, '-'), this.contentEl_);
     }
     return el;
   }
@@ -12555,9 +12537,7 @@ class LiveDisplay extends Component$1 {
     });
     this.contentEl_ = createEl('div', {
       className: 'vjs-live-display'
-    }, {
-      'aria-live': 'off'
-    });
+    }, {});
     this.contentEl_.appendChild(createEl('span', {
       className: 'vjs-control-text',
       textContent: `${this.localize('Stream Type')}\u00a0`
@@ -12634,9 +12614,7 @@ class SeekToLive extends Button {
     this.textEl_ = createEl('span', {
       className: 'vjs-seek-to-live-text',
       textContent: this.localize('LIVE')
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
     el.appendChild(this.textEl_);
     return el;
   }
@@ -12648,11 +12626,9 @@ class SeekToLive extends Button {
   updateLiveEdgeStatus() {
     // default to live edge
     if (!this.player_.liveTracker || this.player_.liveTracker.atLiveEdge()) {
-      this.setAttribute('aria-disabled', true);
       this.addClass('vjs-at-live-edge');
       this.controlText('Seek to live, currently playing live');
     } else {
-      this.setAttribute('aria-disabled', false);
       this.removeClass('vjs-at-live-edge');
       this.controlText('Seek to live, currently behind live');
     }
@@ -13222,9 +13198,7 @@ class TimeTooltip extends Component$1 {
   createEl() {
     return super.createEl('div', {
       className: 'vjs-time-tooltip'
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
   }
 
   /**
@@ -13381,9 +13355,7 @@ class PlayProgressBar extends Component$1 {
   createEl() {
     return super.createEl('div', {
       className: 'vjs-play-progress vjs-slider-bar'
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
   }
 
   /**
@@ -14481,9 +14453,7 @@ class VolumeLevelTooltip extends Component$1 {
   createEl() {
     return super.createEl('div', {
       className: 'vjs-volume-tooltip'
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
   }
 
   /**
@@ -16256,14 +16226,12 @@ class MenuItem extends ClickableComponent {
     if (this.selectable) {
       if (selected) {
         this.addClass('vjs-selected');
-        this.el_.setAttribute('aria-checked', 'true');
         // aria-checked isn't fully supported by browsers/screen readers,
         // so indicate selected state to screen reader in the control text.
         this.controlText(', selected');
         this.isSelected_ = true;
       } else {
         this.removeClass('vjs-selected');
-        this.el_.setAttribute('aria-checked', 'false');
         // Indicate un-selected state to screen reader
         this.controlText('');
         this.isSelected_ = false;
@@ -17177,9 +17145,7 @@ class SubsCapsMenuItem extends TextTrackMenuItem {
       } else {
         parentSpan.appendChild(createEl('span', {
           className: 'vjs-icon-placeholder'
-        }, {
-          'aria-hidden': true
-        }));
+        }, {}));
       }
       parentSpan.appendChild(createEl('span', {
         className: 'vjs-control-text',
@@ -17326,9 +17292,7 @@ class AudioTrackMenuItem extends MenuItem {
     if (['main-desc', 'descriptions'].indexOf(this.options_.track.kind) >= 0) {
       parentSpan.appendChild(createEl('span', {
         className: 'vjs-icon-placeholder'
-      }, {
-        'aria-hidden': true
-      }));
+      }, {}));
       parentSpan.appendChild(createEl('span', {
         className: 'vjs-control-text',
         textContent: ' ' + this.localize('Descriptions')
@@ -17555,7 +17519,6 @@ class PlaybackRateMenuButton extends MenuButton {
    */
   constructor(player, options) {
     super(player, options);
-    this.menuButton_.el_.setAttribute('aria-describedby', this.labelElId_);
     this.updateVisibility();
     this.updateLabel();
     this.on(player, 'loadstart', e => this.updateVisibility(e));
@@ -18689,9 +18652,7 @@ class ResizeManager extends Component$1 {
       className: 'vjs-resize-manager',
       tabIndex: -1,
       title: this.localize('No content')
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
   }
 
   /**

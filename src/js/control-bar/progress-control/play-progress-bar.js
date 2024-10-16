@@ -41,9 +41,7 @@ class PlayProgressBar extends Component {
   createEl() {
     return super.createEl('div', {
       className: 'vjs-play-progress vjs-slider-bar'
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
   }
 
   /**

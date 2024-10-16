@@ -89,9 +89,7 @@ class ClickableComponent extends Component {
     if (!this.player_.options_.experimentalSvgIcons) {
       el.appendChild(Dom.createEl('span', {
         className: 'vjs-icon-placeholder'
-      }, {
-        'aria-hidden': true
-      }));
+      }, {}));
     }
 
     this.createControlTextEl(el);
@@ -118,10 +116,7 @@ class ClickableComponent extends Component {
   createControlTextEl(el) {
     this.controlTextEl_ = Dom.createEl('span', {
       className: 'vjs-control-text'
-    }, {
-      // let the screen reader user know that the text of the element may change
-      'aria-live': 'polite'
-    });
+    }, {});
 
     if (el) {
       el.appendChild(this.controlTextEl_);
@@ -177,7 +172,6 @@ class ClickableComponent extends Component {
     if (!this.enabled_) {
       this.enabled_ = true;
       this.removeClass('vjs-disabled');
-      this.el_.setAttribute('aria-disabled', 'false');
       if (typeof this.tabIndex_ !== 'undefined') {
         this.el_.setAttribute('tabIndex', this.tabIndex_);
       }
@@ -192,7 +186,6 @@ class ClickableComponent extends Component {
   disable() {
     this.enabled_ = false;
     this.addClass('vjs-disabled');
-    this.el_.setAttribute('aria-disabled', 'true');
     if (typeof this.tabIndex_ !== 'undefined') {
       this.el_.removeAttribute('tabIndex');
     }

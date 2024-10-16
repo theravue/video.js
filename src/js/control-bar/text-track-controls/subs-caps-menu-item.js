@@ -23,9 +23,7 @@ class SubsCapsMenuItem extends TextTrackMenuItem {
       } else {
         parentSpan.appendChild(createEl('span', {
           className: 'vjs-icon-placeholder'
-        }, {
-          'aria-hidden': true
-        }));
+        }, {}));
       }
       parentSpan.appendChild(createEl('span', {
         className: 'vjs-control-text',

@@ -50,9 +50,7 @@ class SeekToLive extends Button {
     this.textEl_ = Dom.createEl('span', {
       className: 'vjs-seek-to-live-text',
       textContent: this.localize('LIVE')
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
 
     el.appendChild(this.textEl_);
     return el;
@@ -65,11 +63,9 @@ class SeekToLive extends Button {
   updateLiveEdgeStatus() {
     // default to live edge
     if (!this.player_.liveTracker || this.player_.liveTracker.atLiveEdge()) {
-      this.setAttribute('aria-disabled', true);
       this.addClass('vjs-at-live-edge');
       this.controlText('Seek to live, currently playing live');
     } else {
-      this.setAttribute('aria-disabled', false);
       this.removeClass('vjs-at-live-edge');
       this.controlText('Seek to live, currently behind live');
     }

@@ -99,9 +99,7 @@ class ModalDialog extends Component {
       tabIndex: -1
     }, {
       'aria-describedby': `${this.id()}_description`,
-      'aria-hidden': 'true',
-      'role': 'dialog',
-      'aria-live': 'polite'
+      'role': 'dialog'
     });
   }
 
@@ -198,7 +196,6 @@ class ModalDialog extends Component {
 
     this.show();
     this.conditionalFocus_();
-    this.el().setAttribute('aria-hidden', 'false');
 
     /**
       * Fired just after a `ModalDialog` is opened.
@@ -260,7 +257,6 @@ class ModalDialog extends Component {
     }
 
     this.hide();
-    this.el().setAttribute('aria-hidden', 'true');
 
     /**
       * Fired just after a `ModalDialog` is closed.

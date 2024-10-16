@@ -95,9 +95,7 @@ class ResizeManager extends Component {
       className: 'vjs-resize-manager',
       tabIndex: -1,
       title: this.localize('No content')
-    }, {
-      'aria-hidden': 'true'
-    });
+    }, {});
   }
 
   /**

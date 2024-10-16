@@ -567,7 +567,7 @@ class Component {
     // <span><svg><use>....</use></svg></span>
     const iconContainer = Dom.createEl('span', {
       className: 'vjs-icon-placeholder vjs-svg-icon'
-    }, {'aria-hidden': 'true'});
+    }, {});
 
     const svgEl = document.createElementNS(xmlnsURL, 'svg');
 

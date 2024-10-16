@@ -54,9 +54,7 @@ class AudioTrackMenuItem extends MenuItem {
     if (['main-desc', 'descriptions'].indexOf(this.options_.track.kind) >= 0) {
       parentSpan.appendChild(Dom.createEl('span', {
         className: 'vjs-icon-placeholder'
-      }, {
-        'aria-hidden': true
-      }));
+      }, {}));
       parentSpan.appendChild(Dom.createEl('span', {
         className: 'vjs-control-text',
         textContent: ' ' + this.localize('Descriptions')

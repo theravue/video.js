@@ -45,9 +45,7 @@ class LiveDisplay extends Component {
 
     this.contentEl_ = Dom.createEl('div', {
       className: 'vjs-live-display'
-    }, {
-      'aria-live': 'off'
-    });
+    }, {});
 
     this.contentEl_.appendChild(Dom.createEl('span', {
       className: 'vjs-control-text',

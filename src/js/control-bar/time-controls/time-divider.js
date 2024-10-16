@@ -24,7 +24,6 @@ class TimeDivider extends Component {
       // this element and its contents can be hidden from assistive techs since
       // it is made extraneous by the announcement of the control text
       // for the current time and duration displays
-      'aria-hidden': true
     });
 
     const div = super.createEl('div');
